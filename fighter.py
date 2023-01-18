@@ -45,7 +45,7 @@ class Fighter():
             self.attack(surface)
 
     def attack(self, surface):
-        atacking_rect = pygame.Rect(self.rect.centerx, self.rect.y, self.rect.x / 2.4, self.rect.height)
+        atacking_rect = pygame.Rect(self.rect.centerx, self.rect.y, 1.7 * self.rect.width, self.rect.height)
         pygame.draw.rect(surface, (0, 255, 0), atacking_rect)
 
 
