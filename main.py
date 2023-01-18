@@ -1,6 +1,8 @@
-import pygame
-from fighter import Fighter
+import random
+import time
 
+import pygame
+from fighter import *
 pygame.init()
 
 SCREEN_WIDTH = 1280
@@ -19,6 +21,8 @@ def draw_bg():
 
 fighter = Fighter(280, 450)
 
+enemy = Enemy(500, 500)
+
 run = True
 while run:
 
@@ -28,7 +32,12 @@ while run:
 
     fighter.draw_fighter(screen)
 
-    fighter.move()
+    fighter.move(screen)
+
+
+    enemy = Enemy(1200, random.randint(400, 600))
+    enemy.draw_enemy(screen)
+    enemy.enemy_move()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
