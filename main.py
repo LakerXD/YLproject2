@@ -21,7 +21,7 @@ def draw_bg():
 
 fighter = Fighter(280, 450)
 
-enemy = Enemy(500, 500)
+enemy = Enemy()
 
 run = True
 while run:
@@ -31,13 +31,10 @@ while run:
     draw_bg()
 
     fighter.draw_fighter(screen)
+    fighter.move(screen, enemy)
 
-    fighter.move(screen)
-
-
-    enemy = Enemy(1200, random.randint(400, 600))
     enemy.draw_enemy(screen)
-    enemy.enemy_move()
+    enemy.enemy_move(screen)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
